@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Intro component with sign up form</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <section class="sec-1">
+        <h1>Learn to code by watching others</h1>
+        <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
+          but understanding how developers think is invaluable.</p>
+      </section>
+      <section class="sec-2">
+        <div class="trial">
+          <p><b>Try it free 7 days</b> then $20/mo. thereafter</p>
+        </div>
+        <div class="form">
+          <form>
+            <div class="input">
+              <input type="text" placeholder="First Name"><span class="error"><img src="./images/icon-error.svg"
+                  alt=""></span>
+              <small>First Name cannot be empty</small>
+            </div>
+            <div class="input">
+              <input type="text" placeholder="Last Name"><span class="error"><img src="./images/icon-error.svg"
+                  alt=""></span>
+              <small>Last Name cannot be empty</small>
+            </div>
+            <div class="input">
+              <input type="email" placeholder="Email Address"><span class="error"><img src="./images/icon-error.svg"
+                  alt=""></span>
+              <small>Email Address cannot be empty</small>
+            </div>
+            <div class="input">
+              <input type="password" placeholder="Password"><span class="error"><img src="./images/icon-error.svg"
+                  alt=""></span>
+              <small>Password cannot be empty</small>
+            </div>
+            <div class="input">
+              <input id="button" type="button" value="Claim your free trial">
+            </div>
+          </form>
+          <small>By clicking the button, you are agreeing to our&nbsp;<b><a href="#">Terms and Services</a></b></small>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script>
+    const inputEl = document.querySelectorAll('.input');
+    const errorMsg = document.querySelectorAll(".input small")
+    const error = document.querySelectorAll('.error');
+    const input = document.querySelectorAll('input');
+    const btn = document.querySelector('#button')
+
+    btn.addEventListener('click', () => {
+      for (let i = 0; i < input.length; i++) {
+        if (input[i].value == "") {
+          error[i].style = `display: block`
+          errorMsg[i].style = `display: flex`
+        } else {
+          error[i].style = `display: none`
+          errorMsg[i].style = `display: none`
+        }
+        validateEmail(input[2])
+      }
+    })
+
+    function validateEmail(input) {
+
+      var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+      if (!input.value.match(validRegex)) {
+        error[2].style = `display:block`
+        errorMsg[2].style = `display: flex`
+        errorMsg[2].textContent = `Looks like this is not an email`
+        input.style = 'color:hsl(0, 100%, 74%)'
+      }
+    }
+
+  </script>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor.</a>
+      Coded by <a href="#" target="_blank">Chinyere Unamba.</a>
+    </p>
+  </footer>
+</body>
+
+</html>

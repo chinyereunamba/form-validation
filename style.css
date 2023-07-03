@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-image: url("./images/bg-intro-desktop.png");
+    background-color: hsl(0, 100%, 74%);
+    min-height: 100vh;
+}
+
+main {
+    min-height: calc(100vh - 2rem);
+}
+
+main .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 75%;
+    width: 100%;
+    margin: auto;
+}
+
+.container > section {
+    padding: 0.9rem;
+    max-width: 50%;
+    width: 100%;
+}
+
+.sec-1 h1 {
+    color: hsl(0, 0%, 100%);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin-bottom: 2rem;
+    line-height: clamp(2.4rem, 15vw, 3.6rem);
+}
+
+.sec-1 p {
+    color: hsl(0, 0%, 100%);
+    font-size: 1rem;
+    line-height: 1.6rem;
+}
+
+.sec-2 .trial {
+    margin: 1.5rem 0;
+    padding: 1.1rem;
+    border-radius: 10px;
+    text-align: center;
+    background: hsl(248, 32%, 49%);
+}
+
+.trial p {
+    color: hsl(0, 0%, 100%);
+}
+
+.sec-2 .form {
+    background: hsl(0, 0%, 100%);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.form form div{
+    width: 100%;
+    position: relative;
+}
+
+.form form div span{
+    position: absolute;
+    display: none;
+    top: 27px;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.form form div small{
+    display: none;
+    margin: 0;
+    padding: 5px 0 0 0;
+    color: hsl(0, 100%, 74%);
+    width: 100%;
+    /* display: flex; */
+    justify-content: flex-end;
+    font-style: italic;
+}
+
+.form form input {
+    font-weight: 600;
+    width: 100%;
+    padding: 0.9rem 1.8rem;
+    border-radius: 5px;
+    border: 1px solid hsl(246, 25%, 77%);
+}
+
+.form form input:focus {
+    outline: hsl(249, 10%, 26%) solid 1px;
+}
+
+.form form input::placeholder {
+    font-weight: 600;
+}
+
+.form form input[type="button"] {
+    border: none;
+    text-transform: uppercase;
+    color: hsl(0, 0%, 100%);
+    background: hsl(154, 59%, 51%);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 0 0 hsl(154, 58%, 36%);
+}
+
+
+.form form input[type="button"]:hover{
+    background: hsla(154, 59%, 51%, 0.7);
+}
+
+.form small {
+    font-size: 11px;
+    color: hsl(246, 25%, 77%);
+}
+
+.form small b a {
+    color: hsl(0, 100%, 74%);
+}
+
+.form,
+.trial {
+    box-shadow: 0px 8px 0px 0px hsla(249, 10%, 26%, 0.4);
+}
+
+@media screen and (max-width: 950px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .container > section {
+        padding: 0.9rem;
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 426px){
+    body{
+        background-image: url(./images/bg-intro-mobile.png);
+    }
+    main .container{
+        max-width: 98%;
+    }
+    .sec-2 .form{
+        padding: 1.5rem;
+    }
+    .form form input{
+        padding: 1.1rem .9rem;
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin: 0.6rem 0;
+    color: hsl(0, 0%, 100%);
+}
+.attribution a {
+    color: hsl(248, 32%, 49%);
+    font-weight: 700;
+
+}
