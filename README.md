@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/chinyereunamba/solid-guide)
-- Live Site URL: [View site](https://your-live-site-url.com)
+- Live Site URL: [View site](https://glittery-brigadeiros-0771fb.netlify.app/)
 
 ## My process
 
