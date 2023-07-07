@@ -104,9 +104,11 @@
         if (input[i].value == "") {
           error[i].style = `display: block`
           errorMsg[i].style = `display: flex`
+          input[i].classList.add('error')
         } else {
           error[i].style = `display: none`
           errorMsg[i].style = `display: none`
+          input[i].classList.remove('error')
         }
       }
     })
