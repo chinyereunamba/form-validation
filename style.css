@@ -13,7 +13,7 @@ body {
 }
 
 main {
-    height: 100vh;
+    height: calc(100vh - 3rem);
 }
 
 main .container {
@@ -73,12 +73,12 @@ main .container {
     margin-bottom: 1rem;
 }
 
-.form form div{
+.form form div {
     width: 100%;
     position: relative;
 }
 
-.form form div span{
+.form form div span {
     position: absolute;
     display: none;
     top: 27px;
@@ -86,7 +86,7 @@ main .container {
     transform: translateY(-50%);
 }
 
-.form form div small{
+.form form div small {
     display: none;
     margin: 0;
     padding: 5px 0 0 0;
@@ -105,8 +105,18 @@ main .container {
     border: 1px solid hsl(246, 25%, 77%);
 }
 
+.form form input.error {
+    color: hsl(0, 100%, 74%);
+    border: 1px solid hsl(0, 100%, 74%);
+}
+
 .form form input:focus {
     outline: hsl(249, 10%, 26%) solid 1px;
+}
+
+.form form input.error:focus{
+    outline: 1px solid hsl(0, 100%, 74%);
+
 }
 
 .form form input::placeholder {
@@ -124,8 +134,7 @@ main .container {
     box-shadow: 0 5px 0 0 hsl(154, 58%, 36%);
 }
 
-
-.form form input[type="button"]:hover{
+.form form input[type="button"]:hover {
     background: hsla(154, 59%, 51%, 0.7);
 }
 
@@ -156,18 +165,18 @@ main .container {
     }
 }
 
-@media screen and (max-width: 426px){
-    body{
+@media screen and (max-width: 426px) {
+    body {
         background-image: url(./images/bg-intro-mobile.png);
     }
-    main .container{
+    main .container {
         max-width: 98%;
     }
-    .sec-2 .form{
+    .sec-2 .form {
         padding: 1.5rem;
     }
-    .form form input{
-        padding: 1.1rem .9rem;
+    .form form input {
+        padding: 1.1rem 0.9rem;
     }
 }
 
@@ -180,5 +189,4 @@ main .container {
 .attribution a {
     color: hsl(248, 32%, 49%);
     font-weight: 700;
-
 }

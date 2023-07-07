@@ -28,23 +28,31 @@
         <div class="form">
           <form>
             <div class="input">
-              <input type="text" placeholder="First Name"><span class="error"><img src="./images/icon-error.svg"
-                  alt=""></span>
+              <input type="text" placeholder="First Name">
+              <span class="error">
+                <img src="./images/icon-error.svg" alt="">
+              </span>
               <small>First Name cannot be empty</small>
             </div>
             <div class="input">
-              <input type="text" placeholder="Last Name"><span class="error"><img src="./images/icon-error.svg"
-                  alt=""></span>
+              <input type="text" placeholder="Last Name">
+              <span class="error">
+                <img src="./images/icon-error.svg" alt="">
+              </span>
               <small>Last Name cannot be empty</small>
             </div>
             <div class="input">
-              <input type="email" placeholder="Email Address"><span class="error"><img src="./images/icon-error.svg"
-                  alt=""></span>
+              <input type="email" placeholder="Email Address">
+              <span class="error">
+                <img src="./images/icon-error.svg" alt="">
+              </span>
               <small>Email Address cannot be empty</small>
             </div>
             <div class="input">
-              <input type="password" placeholder="Password"><span class="error"><img src="./images/icon-error.svg"
-                  alt=""></span>
+              <input type="password" placeholder="Password">
+              <span class="error">
+                <img src="./images/icon-error.svg" alt="">
+              </span>
               <small>Password cannot be empty</small>
             </div>
             <div class="input">
@@ -63,6 +71,34 @@
     const input = document.querySelectorAll('input');
     const btn = document.querySelector('#button')
 
+    const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    for (let i = 0; i < input.length; i++) {
+      input[i].addEventListener('keyup', () => {
+        if (input[i].value == "") {
+          error[i].style.display = "block"
+          errorMsg[i].style.display = 'flex'
+          input[i].classList.add('error')
+        } else {
+          error[i].style.display = 'none'
+          errorMsg[i].style.display = 'none'
+          input[i].classList.remove('error')
+
+        }
+      })
+      input[2].addEventListener('keyup', () => {
+        if (!input[2].value.match(validRegex)) {
+          error[2].style.display = 'block'
+          errorMsg[2].style.display = 'flex'
+          input[2].classList.add('error')
+
+          errorMsg[2].textContent = `Must be valid email`
+        } else {
+          input[2].classList.remove('error')
+        }
+      })
+    }
+
+
     btn.addEventListener('click', () => {
       for (let i = 0; i < input.length; i++) {
         if (input[i].value == "") {
@@ -75,18 +111,6 @@
         validateEmail(input[2])
       }
     })
-
-    function validateEmail(input) {
-
-      var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-      if (!input.value.match(validRegex)) {
-        error[2].style = `display:block`
-        errorMsg[2].style = `display: flex`
-        errorMsg[2].textContent = `Looks like this is not an email`
-        input.style = 'color:hsl(0, 100%, 74%)'
-      }
-    }
 
   </script>
   <!-- <footer>
